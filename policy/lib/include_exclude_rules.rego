@@ -62,7 +62,7 @@ _non_blocking_checks := result {
 # Look in various places to find the include_rules/exclude_rules lists
 _include_exclude_rules(include_exclude, fallback_default) := result {
 	# A collection was specified in the policy config
-	result := data.rule_collections[data.config.policy.collection][include_exclude]
+	result := data.rule_collections[data.config.policy.collections][include_exclude]
 } else := result {
 	# The list was specified explicitly in the policy config
 	result := data.config.policy[sprintf("%s_rules", [include_exclude])]
